@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Creador de productos</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #F6F6F6;
+			color: #333;
+			margin: 0;
+			padding: 0;
+		}
+
+		h1 {
+			font-size: 36px;
+			font-weight: bold;
+			color: #333;
+			margin: 20px 0;
+			text-align: center;
+			text-shadow: 1px 1px #E0E0E0;
+		}
+
+		form {
+			background-color: #FFF;
+			padding: 20px;
+			margin: 0 auto;
+			width: 90%;
+			max-width: 800px;
+			box-shadow: 0 2px 5px #CCC;
+			border-radius: 5px;
+		}
+
+		label {
+			display: block;
+			font-size: 18px;
+			font-weight: bold;
+			margin: 20px 0 10px;
+			color: #333;
+		}
+
+		input[type="text"],
+		textarea {
+			border: none;
+			border-radius: 3px;
+			background-color: #E0E0E0;
+			padding: 10px;
+			margin-bottom: 20px;
+			font-size: 16px;
+			color: #333;
+			width: 100%;
+			box-sizing: border-box;
+		}
+
+		textarea {
+			resize: vertical;
+			height: 150px;
+		}
+
+		button[type="button"],
+		input[type="submit"] {
+			background-color: #333;
+			color: #FFF;
+			border: none;
+			border-radius: 3px;
+			padding: 10px 20px;
+			font-size: 18px;
+			font-weight: bold;
+			cursor: pointer;
+			margin-top: 20px;
+			transition: background-color 0.3s;
+		}
+
+		button[type="button"]:hover,
+		input[type="submit"]:hover {
+			background-color: #444;
+		}
+
+		#agregarProducto {
+			background-color: #069;
+			margin: 20px 0;
+		}
+
+		#agregarProducto:hover {
+			background-color: #07B;
+		}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="formulario.js"></script>
+</head>
+<body>
+	<h1>Creador de productos</h1>
+	<form action="insertar.php" method="post">
+		<div id="productos">
+			<div>
+				<label for="nombre0">Nombre:</label>
+				<input type="text" name="nombres[]" id="nombre0" required>
+				<label for="descripcion0">Descripción:</label>
+				<textarea name="descripciones[]" id="descripcion0" rows="5" cols="40" required></textarea>
+			</div>
+		</div>
+		<button type="button" id="agregarProducto">Agregar producto</button><br><br>
+		<input type="submit" value="Agregar productos">
+	</form>
+</body>
+</html>
